@@ -149,6 +149,9 @@ h6 {
   padding: 20px 0;
   transition: all 0.5s;
   z-index: 997;
+  display: flex; /* Added to enable flexbox */
+  justify-content: space-between; /* Changed to space-between for left and right alignment */
+  align-items: center; /* Added to vertically center items */
 }
 
 .header .logo {
@@ -802,6 +805,14 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------
+Try something
+*/
+
+/*--------------------------------------------------------
+Try something
+*/
 .about .container {
   background-color: var(--surface-color);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
@@ -849,11 +860,12 @@ section,
   background-color: var(--accent-color);
 }
 
+
 .about .about-me h4 {
   font-size: 28px;
   position: relative;
   padding-bottom: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   font-weight: 700;
 }
 
@@ -940,12 +952,18 @@ section,
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
   margin-bottom: 30px;
+  display: flex; /* Added to enable flexbox */
+  justify-content: center; /* Center the info items horizontally */
+  align-items: center; /* Center the info items vertically */
+  flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
 }
-/* Added rule to center the logos */
+
+
 .contact .info-wrap .row {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Center the logos */
 }
+
 
 .contact .info-item i {
   font-size: 20px;

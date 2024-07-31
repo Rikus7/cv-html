@@ -827,6 +827,11 @@ Try something
     background-color: #2E3944; /* Slightly lighter gray for hover effect */
 }
 
+h3 {
+     font-size: 25px;
+     font-weight: 600;
+}
+
 /*--------------------------------------------------------
 Try something
 */

@@ -1046,6 +1046,29 @@ Try something
 }
 
 /*--------------------------------------------------------------
+# CV and github Section
+--------------------------------------------------------------*/
+.cv-and-projects .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cv-and-projects .col-md-6 {
+  flex: 1;
+  max-width: 48%;
+}
+
+.cv-and-projects .text-center {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cv-and-projects .btn {
+  margin-top: 15px;
+}
+
+/*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
 .portfolio-details .portfolio-details-slider img {

@@ -1,4 +1,4 @@
-Rikus du Plessis Portfolio
+Rikus du Plessis Portfolio.
 
 For my Virtual CV I went with a professional design that is innovative and easy to navigate by scrolling
 down or by using the navbar to navigate the websites and its different sections.

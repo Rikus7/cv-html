@@ -791,74 +791,115 @@ Try something scroll
   margin-bottom: 0;
 }
 
-
-}
-
 .interests .icon-box:hover .icon {
   background: #748D92;
 }
 
 .interests .icon-box:hover .icon i {
   color: #748D92;
-}*/
+}
 @media (max-width: 768px) {
   .interests .icon-box::before {
     bottom: 60%;
   }
 }
-
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-
-/*--------------------------------------------------------
-Try something
-*/
-/* Style for primary button (GitHub button) */
-.btn-primary {
-    background-color: #212A31; /* Dark gray color */
-    color: #ffffff; /* White text for contrast */
-    border: none; /* Remove border */
-    padding: 10px 20px; /* Adjust padding as needed */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Align properly */
-    border-radius: 5px; /* Optional: rounded corners */
-    font-size: 16px; /* Adjust font size as needed */
-    text-align: center; /* Center text */
+.about .icon-box {
+  padding: 20px 15px;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.2);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 1;
 }
 
-.btn-primary:hover {
-    background-color: #2E3944; /* Slightly lighter gray for hover effect */
+
+.about .icon-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  transition: ease-in-out 0.3s;
+  z-index: -1;
 }
 
-h3 {
-     font-size: 25px;
-     font-weight: 600;
-}
 
-/*--------------------------------------------------------
-Try something
-*/
 .about .container {
   background-color: var(--surface-color);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
-
 }
 
+/* Personal Info Styles */
+.about .personal-info {
+  height: 100%;
+}
+
+.about .personal-info img {
+  max-width: 300px;  /* Limit maximum width */
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto 20px;  /* Center the image */
+}
+
+.about .about-info p {
+  margin-bottom: 100px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.about .about-info strong {
+  font-weight: 600;
+  margin-right: 10px;
+  min-width: 60px;
+  display: inline-block;
+}
+
+/* About Me Styles */
+.about .about-me {
+  padding-left: 20px;
+}
+
+.about .about-me h4 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.about .about-me p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* Skills Section Styles */
+.about .skills-content {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
 
 .about .skills-content h5 {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 30px 0 15px 0;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
 }
 
 .about .progress {
-  height: 36px;
+  height: 30px;
   display: block;
   background: none;
   border-radius: 0;
-  margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 .about .progress .skill {
@@ -869,6 +910,7 @@ Try something
   display: block;
   font-weight: 600;
   font-family: var(--heading-font);
+  font-size: 14px;
 }
 
 .about .progress .skill .val {
@@ -878,41 +920,58 @@ Try something
 
 .about .progress-bar-wrap {
   background: color-mix(in srgb, var(--default-color), transparent 90%);
-  height: 10px;
+  height: 8px;
 }
 
 .about .progress-bar {
   width: 1px;
-  height: 10px;
+  height: 8px;
   transition: 0.9s;
   background-color: var(--accent-color);
 }
 
-
-.about .about-me h4 {
-  font-size: 28px;
-  position: relative;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-  font-weight: 700;
+/* Button Styles */
+.btn-primary {
+  background-color: #212A31;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
 }
 
-.about .about-me h4:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 64px;
-  height: 3px;
-  background: var(--accent-color);
-  left: 0;
-  bottom: 0;
-  margin: auto;
+.btn-primary:hover {
+  background-color: #2E3944;
 }
 
-.about .about-me p {
-  font-size: 18px;
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .about .personal-info {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .about .about-me {
+    padding-left: 0;
+  }
+
+  .about .personal-info img {
+    margin-bottom: 15px;
+  }
 }
 
+@media (max-width: 768px) {
+  .about .container {
+    padding: 20px;
+  }
+
+  .about .personal-info img {
+    max-width: 250px;
+  }
+}
 /*--------------------------------------------------------------
 # Resume Section
 --------------------------------------------------------------*/

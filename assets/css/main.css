@@ -518,9 +518,6 @@ h6 {
   }
 }
 
-
-
-
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
@@ -733,6 +730,13 @@ Try something scroll
   --duration: 15s;
 }
 
+/* Hide slider on screens smaller than 768px (smartphones) */
+@media (max-width: 767px) {
+  .slider-container {
+    display: none;
+  }
+}
+
 .slider-container body {
   background: #000;
   margin: 0;
@@ -784,18 +788,23 @@ Try something scroll
 
 
 
+
 .interests .icon-box {
-  padding: 20px 15px;
+  padding: 30px 20px;
   position: relative;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.2);
-  transition: all 0.3s ease-in-out;
-  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(68, 88, 144, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 12px;
   text-align: center;
   z-index: 1;
 }
 
+.interests .icon-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(68, 88, 144, 0.2);
+}
 
 .interests .icon-box::before {
   content: "";
@@ -804,65 +813,79 @@ Try something scroll
   left: 0;
   right: 0;
   height: 0;
-  transition: ease-in-out 0.3s;
+  background: linear-gradient(135deg, #748D92 0%, #5a7176 100%);
+  transition: all 0.4s ease-out;
   z-index: -1;
 }
 
-/*
 .interests .icon-box:hover::before {
-  background: #748D92;
   height: 100%;
-  border-radius: 0px;
 }
-*/
 
 .interests .icon {
-  margin: 0 auto 30px auto;
-  padding-top: 10px;
-  display: inline-block;
-  text-align: center;
+  margin: 0 auto 25px auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  background: #fff;
-  transition: all 0.3s ease-in-out;
+  width: 70px;
+  height: 70px;
+  background: rgba(116, 141, 146, 0.1);
+  transition: all 0.3s ease;
 }
 
 .interests .icon i {
-  font-size: 30px;
-  line-height: 1;
+  font-size: 34px;
   color: #748D92;
+  transition: all 0.3s ease;
 }
 
 .interests .title {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 1.25rem;
 }
 
 .interests .title a {
-  color: #111;
+  color: #2a2a2a;
+  transition: color 0.3s ease;
 }
 
 .interests .description {
-  font-size: 15px;
-  line-height: 24px;
-  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  transition: color 0.3s ease;
 }
 
+/* Hover Effects */
 .interests .icon-box:hover .icon {
-  background: #748D92;
+  background: #fff;
 }
 
 .interests .icon-box:hover .icon i {
   color: #748D92;
 }
-@media (max-width: 768px) {
-  .interests .icon-box::before {
-    bottom: 60%;
-  }
+
+.interests .icon-box:hover .title a,
+.interests .icon-box:hover .description {
+  color: #fff;
 }
 
+@media (max-width: 768px) {
+  .interests .icon-box {
+    margin-bottom: 30px;
+  }
+
+  .interests .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .interests .icon i {
+    font-size: 28px;
+  }
+}
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -1252,55 +1275,71 @@ Try something scroll
 }
 
 /*--------------------------------------------------------------
-#Resources Section
+# Resources Section
 --------------------------------------------------------------*/
-/* Resources Section */
+
 .resources {
-  background-color: var(--surface-color); /* Use your surface color */
+  background-color: var(--surface-color);
   padding: 80px 0;
+  text-align: center;
 }
 
 .resources .section-title h2 {
   font-size: 36px;
   font-weight: 700;
-  color: var(--heading-color); /* Use your heading color */
+  color: var(--heading-color);
   margin-bottom: 40px;
 }
 
-.resources .text-center {
-  max-width: 600px;
-  margin: 0 auto; /* Center the content */
+/* Download Card Styling */
+.download-card {
+  max-width: 500px;
+  background: var(--card-bg, #fff);
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.resources h3 {
-  font-size: 24px;
+.download-card h3 {
+  font-size: 22px;
   font-weight: 700;
-  color: var(--heading-color); /* Use your heading color */
+  color: var(--heading-color);
+  margin-bottom: 15px;
+}
+
+.download-card .description {
+  font-size: 16px;
+  color: var(--default-color);
   margin-bottom: 20px;
 }
 
-.resources p {
-  font-size: 16px;
-  color: var(--default-color); /* Use your default text color */
-  margin-bottom: 30px;
-}
-
-/* Download CV Button */
-.resources .btn-primary {
-  background-color: var(--accent-color); /* Use your accent color */
-  color: var(--contrast-color); /* Use your contrast color for text */
+/* Download Button */
+.btn-download {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
   border: none;
-  padding: 12px 24px;
+  padding: 12px 28px;
   text-decoration: none;
-  display: inline-block;
-  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
   font-size: 16px;
   font-weight: 600;
-  transition: background-color 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.resources .btn-primary:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%); /* Lighter accent color on hover */
+.btn-download i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.btn-download:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive Adjustments */
@@ -1313,16 +1352,20 @@ Try something scroll
     font-size: 28px;
   }
 
-  .resources h3 {
-    font-size: 22px;
+  .download-card {
+    padding: 25px;
   }
 
-  .resources p {
+  .download-card h3 {
+    font-size: 20px;
+  }
+
+  .download-card .description {
     font-size: 14px;
   }
 
-  .resources .btn-primary {
-    padding: 10px 20px;
+  .btn-download {
+    padding: 10px 22px;
     font-size: 14px;
   }
 }
@@ -1331,24 +1374,28 @@ Try something scroll
 # Contact Section
 --------------------------------------------------------------*/
 
-
 .contact .info-wrap {
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
   margin-bottom: 30px;
-  display: flex; /* Added to enable flexbox */
-  justify-content: center; /* Center the info items horizontally */
-  align-items: center; /* Center the info items vertically */
-  flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 10px; /* Added to round the edges */
 }
-
 
 .contact .info-wrap .row {
   display: flex;
   justify-content: center; /* Center the logos */
 }
 
+.contact .info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
 .contact .info-item i {
   font-size: 20px;
@@ -1385,6 +1432,7 @@ Try something scroll
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  border-radius: 10px; /* Added to round the edges */
 }
 
 @media (max-width: 575px) {
@@ -1399,7 +1447,7 @@ Try something scroll
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
-  border-radius: 0;
+  border-radius: 5px; /* Added subtle rounding for inputs */
   color: var(--default-color);
   background-color: color-mix(in srgb, var(--background-color), transparent 50%);
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
@@ -1429,7 +1477,6 @@ Try something scroll
 .contact .php-email-form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
-
 
 
 /*--------------------------------------------------------------
